@@ -11,5 +11,5 @@ pip install -r requirements.txt
 
 ## Quick start
 ```
-python3 simulate_bacterial_genome.py --tree <newick tree> --reference <reference genome> --output simulation.output
+python3 simulate_bacterial_genome.py --tree simulated_tree.nwk --reference GCF_001457635.1_NCTC7465_genomic.fna --output simulation.output
 ```
