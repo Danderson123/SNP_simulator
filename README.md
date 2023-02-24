@@ -1,5 +1,5 @@
 # SNP_simulator
-Simulate SNPs from a reference across a phylogenetic tree.
+Simulate SNPs across a phylogenetic tree from a reference.
 
 ## Installation
 
