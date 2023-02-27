@@ -20,6 +20,8 @@ def get_options():
     parser.add_argument('--mutation-rate', dest='alpha',
                         help='The mutation rate in SNPs/site/year. Default is 1.57×10^−6 (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3648787/#:~:text=The%20rate%20at%20which%20base,and%20much%20higher%20than%20that)',
                         type=float, default=0.00000157, required=False)
+    parser.add_argument('--nj-tree', dest='nj_tree', action='store_true', default=False,
+                        help='Write an NJ tree (Warning: it takes ages)')
     args = parser.parse_args()
     return args
 
@@ -257,9 +259,10 @@ def main():
                             nodeMapping,
                             args.outputDir)
     # write a neighborhood joining tree
-    sys.stderr.write("\nWriting NJ tree of simulated samples:")
-    write_nj_tree(simulatedSamplePath,
-                args.outputDir)
+    if args.nj_tree:
+        sys.stderr.write("\nWriting NJ tree of simulated samples:")
+        write_nj_tree(simulatedSamplePath,
+                    args.outputDir)
     sys.exit(0)
 
 if __name__ == "__main__":
